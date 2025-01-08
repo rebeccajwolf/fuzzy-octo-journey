@@ -37,5 +37,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            user/${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
