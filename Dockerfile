@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 
 WORKDIR /app
 RUN git clone -b debian https://github.com/rebeccajwolf/musical-octo-barnacle.git .
-COPY /app/requirements.txt .
+COPY . .
 RUN python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
 
 COPY . .
