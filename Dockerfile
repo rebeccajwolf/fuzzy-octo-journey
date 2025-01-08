@@ -34,6 +34,8 @@ WORKDIR /app
 COPY --from=build /app/.venv /app/.venv
 COPY --from=build /app/ .
 
+USER root
+
 RUN apt-get install -yq supervisor \
     && curl -fsSLO "$SUPERCRONIC_URL" \
     && echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c - \
