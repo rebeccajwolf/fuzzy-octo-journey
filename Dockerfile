@@ -14,7 +14,7 @@ COPY . .
 RUN python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
 
 COPY . .
-RUN chown -R 1000:1000 /app
+RUN chown -R 1001:1001 /app
 
 
 
@@ -47,6 +47,8 @@ RUN apt-get install -yq supervisor \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Create user and set up workspace
+RUN groupadd -g 1001 usergroup && useradd -m -u 1001 -g 1001 user
 
 USER user
 COPY --chown=user . .
