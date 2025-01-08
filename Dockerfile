@@ -47,8 +47,6 @@ RUN apt-get install -yq supervisor \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create user and set up workspace
-RUN groupadd -g 1000 usergroup && useradd -m -u 1000 -g 1000 user
 
 USER user
 COPY --chown=user . .
