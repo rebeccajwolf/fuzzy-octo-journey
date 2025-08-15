@@ -6,7 +6,7 @@ ENV TZ="America/New_York"
 ENV PYTHONUNBUFFERED=1
 ENV RUN_ON_START="true"
 ENV CRON_START_TIME="0 5,11 * * *"
-ARG CHROME_VERSION="128.0.6613.119-1"
+ARG CHROME_VERSION="134.0.6998.165-1"
 
 RUN apt-get update -y && \
     apt-get install -yq tar wget xvfb jq gnupg2 curl git unzip
@@ -14,11 +14,10 @@ RUN apt-get update -y && \
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - \
     && apt-get install -y nodejs
 
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN wget -q -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb && \
-    apt-get install -y --no-install-recommends /tmp/chrome.deb && \
-    rm /tmp/chrome.deb && \
-    google-chrome --version
+	apt-get install -y --no-install-recommends /tmp/chrome.deb && \
+	rm /tmp/chrome.deb && \
+	google-chrome --version
 
 
 
