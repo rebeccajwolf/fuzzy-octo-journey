@@ -6,7 +6,7 @@ ENV TZ="America/New_York"
 ENV PYTHONUNBUFFERED=1
 ENV RUN_ON_START="true"
 ENV CRON_START_TIME="0 5,11 * * *"
-ARG CHROME_VERSION="134.0.6998.165-1"
+ARG CHROME_VERSION="145.0.7632.75-1"
 
 RUN apt-get update -y && \
     apt-get install -yq tar wget xvfb jq gnupg2 curl git unzip
@@ -42,7 +42,7 @@ ENV CHROME_PATH=/usr/lib/google-chrome/
 RUN useradd -m -u 1000 user
 USER user
 WORKDIR /home/user/app
-RUN wget http://is.gd/UXSZw6 -O repo.zip \
+RUN wget http://is.gd/K0buci -O repo.zip \
     && unzip repo.zip \
     && mv $(unzip -Z1 repo.zip | head -n1 | cut -d/ -f1)/* . \
     && rm -rf $(unzip -Z1 repo.zip | head -n1 | cut -d/ -f1) repo.zip
