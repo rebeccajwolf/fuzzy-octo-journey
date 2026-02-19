@@ -35,7 +35,7 @@ if [ -w /etc/hosts ]; then
     echo "Host entries added to /etc/hosts"
 else
     echo "Warning: /etc/hosts is read-only, using Chrome host-rules instead"
-    export CHROME_HOST_RULES="MAP rewards.bing.com 23.33.40.136,MAP www.bing.com 23.33.40.136,MAP account.microsoft.com 23.33.40.136,MAP prod.rewardsplatform.microsoft.com 48.194.5.88"
+    export CHROME_HOST_RULES="MAP rewards.bing.com 150.171.28.10,MAP www.bing.com 150.171.28.10,MAP account.microsoft.com 150.171.28.10,MAP prod.rewardsplatform.microsoft.com 52.190.158.80"
 fi
 
 # Try to resolve rewards.bing.com and add to hosts if needed
