@@ -32,6 +32,12 @@ RUN curl -fsSLO "$SUPERCRONIC_URL" \
  && chmod +x "$SUPERCRONIC" \
  && mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
  && ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
+ 
+ 
+ 
+# Install yacron
+RUN curl -L https://github.com/gjcarneiro/yacron/releases/download/0.19.0/yacron-0.19.0-x86_64-unknown-linux-gnu -o /usr/local/bin/yacron && \
+    chmod +x /usr/local/bin/yacron
 
 
     
